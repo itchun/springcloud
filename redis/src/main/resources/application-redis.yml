@@ -1,0 +1,8 @@
+spring:
+  redis:
+    host: 192.168.1.160
+    port: 6379
+    password: datahome123
+    database: 0     #指定数据库，默认为0
+    timeout: 6000   #连接超时时间，单位毫秒，默认为0。也可以这么写：3s
+    ssl: false      # 是否启用SSL连接，默认false
