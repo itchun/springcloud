@@ -17,6 +17,8 @@
         <module>empty</module>
         <module>authentication</module>
         <module>redis</module>
+        <module>filter</module>
+        <module>hikariDataSource</module>
     </modules>
 
     <properties>
@@ -87,9 +89,6 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.18.18</version>
-            <type>pom</type>
-            <scope>import</scope>
         </dependency>
 
     </dependencies>
