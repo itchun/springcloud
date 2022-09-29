@@ -1,0 +1,15 @@
+spring:
+  redis:
+    host: 192.168.1.160
+    port: 6379
+    password: datahome123
+    database: 0     #指定数据库，默认为0
+    timeout: 6000   #连接超时时间，单位毫秒，默认为0。也可以这么写：3s
+    ssl: false      # 是否启用SSL连接，默认false
+    lettuce:
+      pool:
+        max-active: 8 # 连接池最大连接数（使用负值表示没有限制）
+        max-idle: 8 # 连接池中的最大空闲连接
+        min-idle: 0 # 连接池中的最小空闲连接
+        max-wait: 1000 # 连接池最大阻塞等待时间（使用负值表示没有限制）
+      shutdown-timeout: 100   # 关闭超时时间
