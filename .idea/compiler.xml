@@ -8,8 +8,10 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="filter" />
+        <module name="eureka-client-2001" />
         <module name="eureka-client-2000" />
         <module name="util" />
+        <module name="eureka-client-2001-2" />
         <module name="eureka-service-1000" />
         <module name="redis" />
         <module name="authentication" />
@@ -28,6 +30,8 @@
       <module name="empty" options="-parameters" />
       <module name="eureka-client-01" options="-parameters" />
       <module name="eureka-client-2000" options="-parameters" />
+      <module name="eureka-client-2001" options="-parameters" />
+      <module name="eureka-client-2001-2" options="-parameters" />
       <module name="eureka-service-01" options="-parameters" />
       <module name="eureka-service-1000" options="-parameters" />
       <module name="filter" options="-parameters" />
