@@ -9,10 +9,10 @@ import org.springframework.web.client.RestTemplate;
 
 @SpringBootApplication
 @EnableEurekaClient
-public class EurekaClient2001_2 {
+public class EurekaClient2002 {
 
 	public static void main(String[] args) {
-		SpringApplication.run(EurekaClient2001_2.class, args);
+		SpringApplication.run(EurekaClient2002.class, args);
 	}
 
 	@LoadBalanced

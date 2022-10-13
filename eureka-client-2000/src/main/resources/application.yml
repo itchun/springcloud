@@ -4,7 +4,7 @@ eureka:
   client:
     enabled: true
     serviceUrl:
-      defaultZone: http://localhost:1000/eureka/ #注册到中心地址，可配置多个。如：1000，1001两个注册中心（集群的方式）
+      defaultZone: http://service-1:1000/eureka/ #注册到中心地址，可配置多个。如：1000，1001两个注册中心（集群的方式）
 spring:
   application:
     name: eureka-client-2000

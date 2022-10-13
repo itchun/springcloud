@@ -8,12 +8,12 @@
         <version>1.0-SNAPSHOT</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.eureka-client-2001-2</groupId>
-    <artifactId>eureka-client-2001-2</artifactId>
+    <groupId>com.eureka-client-2002</groupId>
+    <artifactId>eureka-client-2002</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>eureka-client-2001-2</name>
+    <name>eureka-client-2002</name>
     <packaging>jar</packaging>
-    <description>eureka-client-2001-2 project for Spring Boot</description>
+    <description>eureka-client-2002 project for Spring Boot</description>
 
     <dependencies>
         <dependency>

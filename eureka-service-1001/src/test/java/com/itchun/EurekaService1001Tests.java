@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class EurekaClient20012Tests {
+class EurekaService1001Tests {
 
 	@Test
 	void contextLoads() {
