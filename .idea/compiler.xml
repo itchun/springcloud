@@ -20,22 +20,14 @@
         <module name="eureka-service-1001" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="eureka-client-01" target="17" />
-      <module name="eureka-client-2001-1" target="17" />
-      <module name="eureka-service-01" target="17" />
-    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="authentication" options="-parameters" />
       <module name="empty" options="-parameters" />
-      <module name="eureka-client-01" options="-parameters" />
       <module name="eureka-client-2000" options="-parameters" />
       <module name="eureka-client-2001" options="-parameters" />
-      <module name="eureka-client-2001-1" options="-parameters" />
       <module name="eureka-client-2002" options="-parameters" />
-      <module name="eureka-service-01" options="-parameters" />
       <module name="eureka-service-1000" options="-parameters" />
       <module name="eureka-service-1001" options="-parameters" />
       <module name="filter" options="-parameters" />

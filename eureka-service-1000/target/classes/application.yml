@@ -2,12 +2,13 @@ server:
   port: 1000
 eureka:
   instance:
-    hostname: localhost
+    hostname: service-1
+    prefer-ip-address: false # 可以使eureka注册的地址不使用域名而是IP时为true
   client:
     registerWithEureka: false #是否往服务注册中心注册自己
     fetchRegistry: false #是否检索服务
     serviceUrl: #指定服务注册中心的地址
-      defaultZone: http://${eureka.instance.hostname}:1001/eureka/
+      defaultZone: http://service-2:1001/eureka/
 spring:
   application:
     name: eureka-service-1000

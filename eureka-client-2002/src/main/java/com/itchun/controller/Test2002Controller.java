@@ -6,12 +6,12 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
 @RestController
-public class TestController {
+public class Test2002Controller {
 
     @Autowired
     RestTemplate restTemplate;
 
-    @RequestMapping("/read")
+    @RequestMapping("/test/write")
     public String test() {
         return "请求到了，我是2002";
     }

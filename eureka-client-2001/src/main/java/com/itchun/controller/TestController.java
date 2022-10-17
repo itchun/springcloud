@@ -11,8 +11,15 @@ public class TestController {
     @Autowired
     RestTemplate restTemplate;
 
-    @RequestMapping("/read")
-    public String test() {
-        return "请求到了，我是2001";
+    @RequestMapping("/test/write")
+    public String write() {
+        return "请求到了，我是客户端2001";
+    }
+
+
+    @RequestMapping("/test/read")
+    public String read() {
+        String result = restTemplate.getForObject("http://eureka-client-1/test/write", String.class);
+        return result;
     }
 }
