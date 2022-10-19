@@ -1,3 +1,4 @@
+# 将 txlcn-tm-5.0.2.RELEASE.jar 解压 其中的 application.properties 内容置空，以便下面的参数替代
 server:
   port: 2006
 spring:
