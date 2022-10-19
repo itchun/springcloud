@@ -21,6 +21,11 @@
         <option value="$PROJECT_DIR$/txlcn/pom.xml" />
       </list>
     </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/txlcn/txlcn-tc/client_2005/pom.xml" />
+      </set>
+    </option>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_17" project-jdk-name="17.0.3.1" project-jdk-type="JavaSDK" />
 </project>

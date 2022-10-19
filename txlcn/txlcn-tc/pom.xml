@@ -18,7 +18,6 @@
     <modules>
         <module>client_2003</module>
         <module>client_2004</module>
-        <module>client_2005</module>
     </modules>
 
     <properties>

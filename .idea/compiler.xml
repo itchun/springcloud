@@ -13,7 +13,6 @@
         <module name="tc2003" />
         <module name="tc2004" />
         <module name="redis" />
-        <module name="tc2005" />
         <module name="empty" />
         <module name="filter" />
         <module name="util" />
@@ -29,6 +28,7 @@
       <module name="empty (2)" target="17" />
       <module name="empty (3)" target="17" />
       <module name="empty (4)" target="17" />
+      <module name="tc2005" target="17" />
       <module name="txlcn (1)" target="17" />
     </bytecodeTargetLevel>
   </component>
