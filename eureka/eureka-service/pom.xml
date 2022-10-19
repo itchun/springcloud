@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.springcloud.eureka</groupId>
+        <artifactId>eureka</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <artifactId>service</artifactId>
+    <!-- 首先修改打包方式 -->
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <name>spring-cloud-eureka-service</name>
+    <description>spring-cloud-eureka-service project for Spring Boot</description>
+
+    <modules>
+        <module>eureka-service-1000</module>
+        <module>eureka-service-1001</module>
+    </modules>
+
+    <properties>
+    </properties>
+
+    <!--  因为是总项目 所以用dependencyManagement来管理  因为其他的子项目就不会来管理版本了了 可以直接引用 -->
+    <dependencyManagement>
+        <dependencies>
+
+        </dependencies>
+    </dependencyManagement>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

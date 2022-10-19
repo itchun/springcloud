@@ -1,0 +1,41 @@
+server:
+  port: 2006
+spring:
+  application:
+    name: txlcn-tm-1
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/tx-manager?characterEncoding=UTF-8&serverTimezone=Asia/Shanghai&useSSL=false
+    username: root
+    password: 123456
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    hibernate:
+      ddl-auto: update
+  redis:
+    host: 192.168.1.160
+    port: 6379
+    password: datahome123
+    ssl: false
+
+# https://www.codingapi.com/docs/txlcn-setting-manager 手册指导文档
+tx-lcn:
+  logger:
+    enabled: true
+    driver-class-name: ${spring.datasource.driver-class-name}
+    jdbc-url: ${spring.datasource.url}
+    username: ${spring.datasource.username}
+    password: ${spring.datasource.password}
+    min-idle: 5
+    connection-init-sql: SELECT 1
+    max-pool-size: 1000  # 连接池最大连接数，默认是10
+  manager:
+    admin-key: itchun123
+    host: 127.0.0.1
+    port: 8070
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://service-1:1000/eureka/ #注册到中心地址，可配置多个。如：1000，1001两个注册中心（集群的方式）
+

@@ -21,13 +21,63 @@
     <file url="file://$PROJECT_DIR$/eureka-service-1001/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/eureka-service/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/eureka-service/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/eureka/eureka-client/eureka-client-2000/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/eureka/eureka-client/eureka-client-2000/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/eureka/eureka-client/eureka-client-2001/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/eureka/eureka-client/eureka-client-2001/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/eureka/eureka-client/eureka-client-2002/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/eureka/eureka-client/eureka-client-2002/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/eureka/eureka-client/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/eureka/eureka-client/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/eureka/eureka-service/eureka-service-1000/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/eureka/eureka-service/eureka-service-1000/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/eureka/eureka-service/eureka-service-1001/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/eureka/eureka-service/eureka-service-1001/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/eureka/eureka-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/eureka/eureka-service/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/eureka/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/eureka/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/filter/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/filter/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/hikariDataSource/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/hikariDataSource/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/redis/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-cloud-txlcn/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-cloud-txlcn/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-cloud-txlcn/txlcn-application-a/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-cloud-txlcn/txlcn-application-a/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-cloud-txlcn/txlcn-application-b/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-cloud-txlcn/txlcn-application-b/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-cloud-txlcn/txlcn-application-c/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-cloud-txlcn/txlcn-application-c/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-cloud-txlcn/txlcn-tc/client_2003/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-cloud-txlcn/txlcn-tc/client_2003/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-cloud-txlcn/txlcn-tc/client_2004/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-cloud-txlcn/txlcn-tc/client_2004/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-cloud-txlcn/txlcn-tc/client_2005/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-cloud-txlcn/txlcn-tc/client_2005/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-cloud-txlcn/txlcn-tc/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-cloud-txlcn/txlcn-tc/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-cloud-txlcn/txlcn-tm/manage-2006/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-cloud-txlcn/txlcn-tm/manage-2006/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-cloud-txlcn/txlcn-tm/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-cloud-txlcn/txlcn-tm/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/txlcn/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/txlcn/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/txlcn/txlcn-tc/client_2003/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/txlcn/txlcn-tc/client_2003/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/txlcn/txlcn-tc/client_2004/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/txlcn/txlcn-tc/client_2004/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/txlcn/txlcn-tc/client_2005/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/txlcn/txlcn-tc/client_2005/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/txlcn/txlcn-tc/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/txlcn/txlcn-tc/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/txlcn/txlcn-tm/manage-2006/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/txlcn/txlcn-tm/manage-2006/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/txlcn/txlcn-tm/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/txlcn/txlcn-tm/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/util/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/util/src/main/resources" charset="UTF-8" />
     <file url="PROJECT" charset="UTF-8" />
