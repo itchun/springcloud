@@ -36,4 +36,13 @@ public class UserController {
         return userService.insert_union_exception_2();
     }
 
+    @RequestMapping("union/exception/save3.do")
+    private Object insert_union_exception_3() {
+        return userService.insert_union_exception_3();
+    }
+
+    @RequestMapping("union/exception/save4.do")
+    private Object insert_union_exception_4() {
+        return userService.insert_union_exception_4();
+    }
 }
