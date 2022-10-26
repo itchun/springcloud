@@ -23,6 +23,7 @@
         <module>hikariDataSource</module>
         <module>eureka</module>
         <module>txlcn</module>
+        <module>seata</module>
     </modules>
 
     <properties>
