@@ -6,7 +6,6 @@
         <groupId>com.seata</groupId>
         <artifactId>seata</artifactId>
         <version>0.0.1-SNAPSHOT</version>
-        <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <artifactId>at</artifactId>
     <version>0.0.1-SNAPSHOT</version>
@@ -15,12 +14,16 @@
     <description>at project for Spring Boot</description>
 
     <modules>
-        <module>at-rm</module>
-        <module>at-tm</module>
+        <module>at-rm-2008</module>
+        <module>at-tm-2007</module>
     </modules>
 
     <dependencies>
-
+        <dependency>
+            <groupId>com.netflix.archaius</groupId>
+            <artifactId>archaius-core</artifactId>
+            <version>0.7.7</version>
+        </dependency>
     </dependencies>
 
     <build>

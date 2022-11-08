@@ -6,7 +6,7 @@
         <groupId>com.springcloud.txlcn</groupId>
         <artifactId>txlcn</artifactId>
         <version>1.0-SNAPSHOT</version>
-        <relativePath/> <!-- lookup parent from repository -->
+       <!-- <relativePath/>--> <!-- lookup parent from repository -->
     </parent>
     <artifactId>tc</artifactId>
     <!-- 首先修改打包方式 -->

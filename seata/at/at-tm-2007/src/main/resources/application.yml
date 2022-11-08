@@ -1,0 +1,98 @@
+server:
+  port: 2007
+spring:
+  application:
+    name: seata-at-tm-2007
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/seata_demo?characterEncoding=UTF-8&serverTimezone=Asia/Shanghai&useSSL=false
+    username: root
+    password: 123456
+    hikari:
+      minimum-idle: 5
+      # 空闲连接存活最大时间，默认600000（10分钟）
+      idle-timeout: 180000
+      # 连接池最大连接数，默认是10
+      maximum-pool-size: 100
+      # 此属性控制从池返回的连接的默认自动提交行为,默认值：true
+      auto-commit: true
+      # 连接池名称
+      pool-name: datahome-Hikari
+      # 此属性控制池中连接的最长生命周期，值0表示无限生命周期，默认1800000即30分钟
+      max-lifetime: 1800000
+      # 数据库连接超时时间,默认30秒，即30000
+      connection-timeout: 30000
+      connection-test-query: SELECT 1
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL57Dialect
+    hibernate:
+      ddl-auto: update
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://service-1:1000/eureka/ #注册到中心地址，可配置多个。如：1000，1001两个注册中心（集群的方式）
+
+seata:
+  enabled: true
+  enable-auto-data-source-proxy: true
+  application-id: ${spring.application.name}
+  tx-service-group: group01
+  service:
+    vgroup-mapping:
+      group01: cluster01
+    cluster01:
+      grouplist: 192.168.1.165:8091
+    enableDegrade: false
+    disableGlobalTransaction: false
+  registry:
+    type: eureka
+    eureka:
+      application: ${spring.application.name}
+      serviceUrl: ${eureka.client.serviceUrl.defaultZone}
+  config:
+    type: file
+  client:
+    rm:
+      async-commit-buffer-limit: 10000
+      lock:
+        retry-interval: 10
+        retry-times: 30
+        retry-policy-branch-rollback-on-conflict: true
+      report-retry-count: 5
+      table-meta-check-enable: false
+      report-success-enable: false
+    tm:
+      commit-retry-count: 5
+      rollback-retry-count: 5
+    undo:
+      data-validation: true
+      log-serialization: jackson
+      log-table: undo_log
+    log:
+      exception-rate: 100
+  transport:
+    type: TCP
+    server: NIO
+    heartbeat: true
+    thread-factory:
+      boss-thread-prefix: NettyBoss
+      worker-thread-prefix: NettyServerNIOWorker
+      server-executor-thread-prefix: NettyServerBizHandler
+      share-boss-worker: false
+      client-selector-thread-prefix: NettyClientSelector
+      client-selector-thread-size: 1
+      client-worker-thread-prefix: NettyClientWorkerThread
+      boss-thread-size: 1
+      worker-thread-size: default
+    shutdown:
+      wait: 3 #seconds
+    serialization: seata
+    compressor: none
+
+
+
+
+
+
+

@@ -3,18 +3,19 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>com.springcloud.txlcn</groupId>
-        <artifactId>tm</artifactId>
-        <version>1.0-SNAPSHOT</version>
-       <!-- <relativePath/>--> <!-- lookup parent from repository -->
+        <groupId>com.seata</groupId>
+        <artifactId>at</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+
     </parent>
-    <artifactId>tm2006</artifactId>
+    <artifactId>at-tm-2007</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>manage-2006</name>
+    <name>at-tm-2007</name>
     <packaging>jar</packaging>
-    <description>manage-2006 project for Spring Boot</description>
+    <description>at-tm-2007 project for Spring Boot</description>
 
     <dependencies>
+
 
     </dependencies>
 

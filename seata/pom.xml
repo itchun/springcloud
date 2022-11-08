@@ -6,7 +6,6 @@
         <groupId>com.springcloud</groupId>
         <artifactId>springcloud</artifactId>
         <version>1.0-SNAPSHOT</version>
-        <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.seata</groupId>
     <artifactId>seata</artifactId>
@@ -22,6 +21,7 @@
 
     <properties>
         <seata.version>1.5.2</seata.version>
+        <alibaba.seata.version>2.2.0.RELEASE</alibaba.seata.version>
         <mysql.version>5.1.48</mysql.version>
     </properties>
 
@@ -35,15 +35,53 @@
                 <artifactId>mysql-connector-java</artifactId>
                 <version>${mysql.version}</version>
             </dependency>
+
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-seata</artifactId>
+                <version>${alibaba.seata.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.seata</groupId>
+                <artifactId>seata-all</artifactId>
+                <version>${seata.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
     <dependencies>
         <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-alibaba-seata</artifactId>
+        </dependency>
+
+        <!--<dependency>
             <groupId>io.seata</groupId>
             <artifactId>seata-all</artifactId>
-            <version>${seata.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework</groupId>
+                    <artifactId>spring-aop</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
+-->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+        </dependency>
+
     </dependencies>
 
     <build>
