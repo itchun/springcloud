@@ -1,6 +1,8 @@
 server:
   port: 2007
 spring:
+  main:
+    allow-circular-references: true
   application:
     name: seata-at-tm-2007
   datasource:
@@ -35,7 +37,7 @@ eureka:
 
 seata:
   enabled: true
-  enable-auto-data-source-proxy: true
+  enable-auto-data-source-proxy: false
   application-id: ${spring.application.name}
   tx-service-group: group01
   service:
@@ -69,8 +71,8 @@ seata:
       data-validation: true
       log-serialization: jackson
       log-table: undo_log
-    log:
-      exception-rate: 100
+  log:
+    exception-rate: 100
   transport:
     type: TCP
     server: NIO

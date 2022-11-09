@@ -20,56 +20,46 @@
     </modules>
 
     <properties>
-        <seata.version>1.5.2</seata.version>
-        <alibaba.seata.version>2.2.0.RELEASE</alibaba.seata.version>
+        <seata-all.version>1.5.2</seata-all.version>
+        <seata-spring-boot.version>1.5.2</seata-spring-boot.version>
+        <seata-cloud.version>2.2.0.RELEASE</seata-cloud.version>
         <mysql.version>5.1.48</mysql.version>
+        <alibaba.fastjson.version>1.2.83</alibaba.fastjson.version>
     </properties>
-
-    <!--  因为是总项目 所以用dependencyManagement来管理  因为其他的子项目就不会来管理版本了了 可以直接引用 -->
-    <dependencyManagement>
-        <dependencies>
-
-            <!--mysql-->
-            <dependency>
-                <groupId>mysql</groupId>
-                <artifactId>mysql-connector-java</artifactId>
-                <version>${mysql.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>com.alibaba.cloud</groupId>
-                <artifactId>spring-cloud-alibaba-seata</artifactId>
-                <version>${alibaba.seata.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>io.seata</groupId>
-                <artifactId>seata-all</artifactId>
-                <version>${seata.version}</version>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
 
     <dependencies>
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
-            <artifactId>spring-cloud-alibaba-seata</artifactId>
-        </dependency>
-
-        <!--<dependency>
-            <groupId>io.seata</groupId>
-            <artifactId>seata-all</artifactId>
+            <artifactId>spring-cloud-starter-alibaba-seata</artifactId>
+            <version>${seata-cloud.version}</version>
             <exclusions>
                 <exclusion>
-                    <groupId>org.springframework</groupId>
-                    <artifactId>spring-aop</artifactId>
+                    <groupId>io.seata</groupId>
+                    <artifactId>seata-spring-boot-starter</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>io.seata</groupId>
+                    <artifactId>seata-all</artifactId>
                 </exclusion>
             </exclusions>
         </dependency>
--->
+
+        <dependency>
+            <groupId>io.seata</groupId>
+            <artifactId>seata-spring-boot-starter</artifactId>
+            <version>${seata-spring-boot.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.seata</groupId>
+            <artifactId>seata-all</artifactId>
+            <version>${seata-all.version}</version>
+        </dependency>
+
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
+            <version>${mysql.version}</version>
         </dependency>
 
         <dependency>
@@ -82,6 +72,26 @@
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>${alibaba.fastjson.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.github.openfeign.form</groupId>
+            <artifactId>feign-form</artifactId>
+            <version>3.8.0</version>
+        </dependency>
+        <dependency>
+            <groupId>io.github.openfeign.form</groupId>
+            <artifactId>feign-form-spring</artifactId>
+            <version>3.8.0</version>
+        </dependency>
     </dependencies>
 
     <build>
