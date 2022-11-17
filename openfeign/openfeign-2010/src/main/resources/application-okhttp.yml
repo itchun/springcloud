@@ -1,0 +1,8 @@
+feign:
+  okhttp:
+    enabled: true
+  httpclient:
+    enabled: false
+    connection-timeout: 10000 #连接超时时间(单位：毫秒)
+    ok-http:
+      read-timeout: 12

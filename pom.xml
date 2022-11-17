@@ -25,6 +25,7 @@
         <module>eureka</module>
         <module>txlcn</module>
         <module>seata</module>
+        <module>openfeign</module>
     </modules>
 
     <properties>

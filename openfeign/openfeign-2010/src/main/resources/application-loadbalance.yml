@@ -1,0 +1,12 @@
+# 重试机制
+spring:
+  cloud:
+    loadbalancer:
+      retry:
+        enabled: true
+        max-retries-on-same-service-instance: 2
+        max-retries-on-next-service-instance: 1
+
+
+
+

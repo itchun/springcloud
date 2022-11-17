@@ -1,0 +1,9 @@
+feign:
+  client:
+    config:
+      default: #默认情况下的配置
+        connect-timeout: 1000 #单位毫秒
+        read-timeout: 5000 #单位毫秒
+      openfeign-2011-1: #这里对应规则有contextId的对应contextId，无contextId的对应name或者value， 有openfeign-2011-1配置的情况下，openfeign-2011-1配置会覆盖default配置
+        connect-timeout: 1000 #单位毫秒
+        read-timeout: 10000 #单位毫秒
