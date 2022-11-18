@@ -1,3 +1,4 @@
+#设置了。没卵子用
 feign:
   okhttp:
     enabled: true

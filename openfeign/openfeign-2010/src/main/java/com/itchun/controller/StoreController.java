@@ -17,13 +17,37 @@ public class StoreController {
     @Resource
     private ProductFailFeign productFailFeign;
 
-    @RequestMapping(value = "/find_1.do")
+    // 简单成功请求
+    @RequestMapping(value = "/find_success.do")
     public Object find_success(@RequestParam("name") String name) {
         return productSuccessFeign.find_success(name);
     }
 
-    @RequestMapping(value = "/find_2.do")
+
+    // 负载均衡请求
+    @RequestMapping(value = "/find_balancer.do")
+    public Object find_balancer(@RequestParam("name") String name) {
+        return productSuccessFeign.find_balancer(name);
+    }
+
+
+    // 简单失败请求
+    @RequestMapping(value = "/find_fail.do")
     public Object find_fail(@RequestParam("name") String name) {
         return productFailFeign.find_fail(name);
+    }
+
+
+    // 超时间请求
+    @RequestMapping(value = "/find_timeout.do")
+    public Object find_timeout(@RequestParam("name") String name) {
+        return productFailFeign.find_timeout(name);
+    }
+
+
+    // 超时重试请求
+    @RequestMapping(value = "/find_timeout_retry.do")
+    public Object find_timeout_retry(@RequestParam("name") String name) {
+        return productFailFeign.find_timeout(name);
     }
 }

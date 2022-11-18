@@ -1,0 +1,16 @@
+feign:
+  client:
+    config:
+      #      defalut: # defalut配置的未生效，全局的使用FeginLoggerConfig配置可以生效
+      #        logger-level: FULL
+      openfeign-2011-1: # 可用
+        logger-level: FULL
+
+logging:
+  level:
+    com.itchun.feignClient.ProductSuccessFeign: debug
+
+#NONE: 没有日志记录
+#BASIC: 日志仅记录请求方法、url、响应状态和执行时间
+#HEADERS: 日志记录基本信息（同BASIC）以及请求头和响应头信息
+#FULL: 日志记录请求和响应的头(headers)、体（body）、元数据（metadata）信息

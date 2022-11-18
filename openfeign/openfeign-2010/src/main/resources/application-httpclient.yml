@@ -1,3 +1,4 @@
+#设置了。没卵子用
 feign:
   httpclient: #httpclient客户端配置（全局）
     enabled: true

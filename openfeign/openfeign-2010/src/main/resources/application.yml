@@ -3,16 +3,13 @@ server:
 spring:
   application:
     name: openfeign-master
-#  main:
-#    allow-bean-definition-overriding: true # 允许bean重名
+  #  main:
+  #    allow-bean-definition-overriding: true # 允许bean重名
   profiles:
     #active: loadbalance
-    include: loadbalance,okhttp
+    include: client,logger
+
 eureka:
   client:
     serviceUrl:
       defaultZone: http://service-1:1000/eureka/ #注册到中心地址，可配置多个。如：1000，1001两个注册中心（集群的方式）
-
-feign:
-  circuitbreaker:
-    enabled: true # @FeignClient中的fallback属性
