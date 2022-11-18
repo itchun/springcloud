@@ -1,4 +1,4 @@
-#设置了。没卵子用
+#设置了，okhttp启用了，但是设置的超时时间啊，都没起作用
 feign:
   okhttp:
     enabled: true
