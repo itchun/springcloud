@@ -18,6 +18,7 @@
 
     <modules>
         <module>empty</module>
+        <module>util</module>
         <module>authentication</module>
         <module>redis</module>
         <module>filter</module>
@@ -26,6 +27,7 @@
         <module>txlcn</module>
         <module>seata</module>
         <module>openfeign</module>
+        <module>springCloudConfig</module>
     </modules>
 
     <properties>
@@ -100,7 +102,6 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
         </dependency>
-
     </dependencies>
 
     <build>
