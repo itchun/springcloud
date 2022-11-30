@@ -1,4 +1,4 @@
-package com.itchun.dbAutomatic;
+package com.itchun.dbAutomatic.postgresql;
 
 import cn.hutool.core.util.StrUtil;
 import cn.hutool.poi.excel.ExcelReader;

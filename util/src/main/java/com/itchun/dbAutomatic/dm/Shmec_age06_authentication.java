@@ -1,4 +1,4 @@
-package com.itchun.dbAutomatic;
+package com.itchun.dbAutomatic.dm;
 
 import cn.hutool.core.util.StrUtil;
 import cn.hutool.poi.excel.ExcelReader;
@@ -17,7 +17,7 @@ import java.util.Random;
 // 下划线改驼峰
 // 数据库代码生成 配合 flyway
 // V1.0
-public class DM_db_auto {
+public class Shmec_age06_authentication {
 
     protected static String root_path = "C:\\工作\\数据之家\\项目档案\\[学前教育]数字身份认证系统\\";
     protected static String db_excel_path = root_path + "项目\\表结构\\应用信息 - v1.2.xlsx";
