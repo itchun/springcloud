@@ -20,20 +20,21 @@ import java.util.Random;
 public class Shmec_age06_data_platform {
 
     protected static String root_path = "C:\\工作\\数据之家\\项目档案\\[学前教育]数据中台\\";
-    protected static String db_excel_path = root_path + "项目\\数据库表结构\\数据对接\\幼儿在园运动数据接口--v1.0.xlsx";
+    protected static String db_excel_path = root_path + "项目\\数据库表结构\\数据对接\\通用数据接口--v1.0.xlsx";
     protected static String java_path = root_path + "代码\\shmec_age06_data_platform\\src\\main\\";
     protected static String java_home_prefix = "com/datahome";
     protected static String java_home_path = java_path + "java/" + java_home_prefix + "/";
-    protected static String java_entity_path = java_home_path + "entity/jwXqxxb";
-    protected static String java_mapper_path = java_home_path + "mapper/jwXqxxb";
-    protected static String java_group_path = java_home_path + "group/jwXqxxb";
-    protected static String java_mapper_xml_path = java_path + "resources/mapper/jwXqxxb";
-    protected static String java_service_path = java_home_path + "service/jwXqxxb";
-    protected static String java_service_impl_path = java_home_path + "service/impl/jwXqxxb";
+    protected static String java_model_prefix = "api";
+    protected static String java_entity_path = java_home_path + "entity/" + java_model_prefix;
+    protected static String java_mapper_path = java_home_path + "mapper/" + java_model_prefix;
+    protected static String java_group_path = java_home_path + "group/" + java_model_prefix;
+    protected static String java_mapper_xml_path = java_path + "resources/mapper/" + java_model_prefix;
+    protected static String java_service_path = java_home_path + "service/" + java_model_prefix;
+    protected static String java_service_impl_path = java_home_path + "service/" + java_model_prefix + "/impl";
     protected static String sql_version_path = java_path + "resources/db_migration";
     protected static String sql_db_name = "data_centre";
-    protected static String sql_version_name = "V0.1.9__init_table";
-    protected static boolean file_ifexsits_cover = false;
+    protected static String sql_version_name = "V0.2.0__init_table";
+    protected static boolean file_ifexsits_cover = true;
     protected static boolean field_is_underline = true;
     protected static String[] sheetname_include = {};
     protected static String[] sheetname_excluded = {};
@@ -43,9 +44,9 @@ public class Shmec_age06_data_platform {
     protected static String pagckage_import_group = pagckage_import_root + "." + java_group_path.replace(java_home_path, "").replace("/", ".");
     protected static String pagckage_import_service = pagckage_import_root + "." + java_service_path.replace(java_home_path, "").replace("/", ".");
     protected static String pagckage_import_service_impl = pagckage_import_root + "." + java_service_impl_path.replace(java_home_path, "").replace("/", ".");
-    protected static String package_entity_prefix = "package " + pagckage_import_entity + ";\n\nimport com.baomidou.mybatisplus.annotation.IdType;\nimport com.baomidou.mybatisplus.annotation.TableId;\nimport com.baomidou.mybatisplus.annotation.TableName;\nimport lombok.Data;\nimport lombok.EqualsAndHashCode;\n\nimport java.util.Date;\n";
+    protected static String package_entity_prefix = "package " + pagckage_import_entity + ";\n\nimport com.baomidou.mybatisplus.annotation.IdType;\nimport com.baomidou.mybatisplus.annotation.TableId;\nimport com.baomidou.mybatisplus.annotation.TableName;\nimport " + pagckage_import_entity.replace(java_model_prefix, "") + "BaseEntity;\nimport lombok.Data;\nimport lombok.EqualsAndHashCode;\n\nimport java.util.Date;\n";
     protected static String package_mapper_prefix = "package " + pagckage_import_mapper + ";\nimport com.baomidou.mybatisplus.core.mapper.BaseMapper;\nimport org.springframework.stereotype.Repository;\n";
-    protected static String package_group_prefix = "package " + pagckage_import_group + ";\n";
+    protected static String package_group_prefix = "package " + pagckage_import_group + ";\n\nimport " + pagckage_import_group.replace(java_model_prefix, "") + "BaseGroup;\n";
     protected static String package_service_prefix = "package " + pagckage_import_service + ";";
     protected static String package_service_impl_prefix = "package " + pagckage_import_service_impl + ";";
 
@@ -262,7 +263,7 @@ public class Shmec_age06_data_platform {
                 file.delete();
             else
                 return;
-        }else {
+        } else {
             new File(path).mkdirs();
         }
         try {
