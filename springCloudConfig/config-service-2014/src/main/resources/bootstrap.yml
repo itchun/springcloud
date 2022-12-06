@@ -3,18 +3,8 @@ server:
 spring:
   application:
     name: config-service-2014
-  cloud:
-    config: # 类 AbstractScmAccessor 的 getSearchLocations 方法
-      enabled: true #默认开启，false时，客户端不可读取配置服务中心配置
-      bootstrap: true
-      server:
-        git: #默认使用git
-          uri: https://github.com/itchun/config-test.git
-          default-label: master # 默认分支
-          force-pull: true # 强制从远程存储库中提取，如果本地副本是脏的
-          basedir: D:/config
-          order: 1 # 属性的数值越低，优先级越高
-
+  profiles:
+    active: default
 eureka:
   client:
     serviceUrl:

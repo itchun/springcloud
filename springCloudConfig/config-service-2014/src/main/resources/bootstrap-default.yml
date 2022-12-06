@@ -1,0 +1,22 @@
+spring:
+  cloud:
+    config: # 类 AbstractScmAccessor 的 getSearchLocations 方法
+      enabled: true #默认开启，false时，客户端不可读取配置服务中心配置
+      server:
+        git: #默认使用git
+          uri: https://github.com/itchun/config-test.git
+          basedir: D:/config
+      uri: http://localhost:8888
+#      username: root
+#      password: itchun123
+
+
+# 配置文件名称 config-test.yml
+# config 是 {application}
+# test 是 {profile}
+# master 是 {label}
+# /{application}/{profile}[/{label}]
+# /{application}-{profile}.yml
+# /{label}/{application}-{profile}.yml
+# /{application}-{profile}.properties
+# /{label}/{application}-{profile}.properties

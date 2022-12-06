@@ -25,7 +25,7 @@
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
         </dependency>
 
-        <!--缺少 bootstrap.yml无法被识别-->
+        <!--SpringCloud 2020.*以后的版本默认禁用了bootstrap，导致读取配置文件时读取不到该属性。 缺少 bootstrap.yml无法被识别-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-bootstrap</artifactId>

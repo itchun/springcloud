@@ -1,0 +1,9 @@
+spring:
+  cloud:
+    config:
+      enabled: true
+#      uri: http://root:itchun123@localhost:8888
+      uri: http://localhost:2014
+      name: config
+      label: master
+      profile: dev
