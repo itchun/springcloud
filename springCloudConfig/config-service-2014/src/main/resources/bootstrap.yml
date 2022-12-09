@@ -5,6 +5,9 @@ spring:
     name: config-service-2014
   profiles:
     active: default
+  cloud:
+    config:
+      fail-fast: true # 在启动时候还没有拉取远端配置完成之前的失败都是允许
 eureka:
   client:
     serviceUrl:

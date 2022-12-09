@@ -1,0 +1,165 @@
+# /{application}/{profile}[/{label}]
+    1. 会将{label}作为可选参数
+    2. 会查询出结果符合 {application}-{profile}.yml 和 {application}.yml的文件，此时客户端获取不到{application}.yml的值
+# /{application}-{profile}.yml
+# /{label}/{application}-{profile}.yml
+# /{application}-{profile}.properties
+# /{label}/{application}-{profile}.properties
+
+Spring Boot服务配置文件加载顺序：
+========================================================================================================================
+1.Spring Boot服务bootstrap.*里面的配置
+2.链接配置中心Config server，加载远程配置(git仓库、svn、本地路径的文件等)
+3.加载Spring Boot服务application.*里面的配置
+
+
+
+示例：
+========================================================================================================================
+根目录下文件
+    - springconfig.yml
+    - springconfig-dev.yml
+    - springconfig-prod.yml
+    - application.yml
+
+配置：
+    label: master
+    name: springconfig
+    profile: dev
+结论：
+    优先级 application.yml < springconfig.yml < springconfig-dev.yml
+
+配置：
+    label: master
+    name: springconfig
+    profile: prod
+结论：
+    优先级 application.yml < springconfig.yml < springconfig-prod.yml
+
+配置：
+    label: master
+    name: springconfig
+    profile: xx
+结论：
+    优先级 application.yml < springconfig.yml
+
+配置：
+    label: master
+    name: springconfig
+    profile:
+结论：
+    获取不到参数
+
+配置：
+    label: master
+    name:
+    profile:
+结论：
+    获取不到参数
+
+配置：
+    label: master
+    name: xx
+    profile: xx
+结论：
+    读取到的是 application.yml 中的配置
+
+
+
+示例：
+========================================================================================================================
+根目录下文件
+    - springconfig.yml
+    - springconfig-dev.yml
+    - springconfig-prod.yml
+    - application.yml
+    - /app/springconfig-app.yml
+    - /app/springconfig-dev.yml
+
+配置：
+    label: master
+    name: springconfig
+    profile: app
+结论：
+    优先级 application.yml < springconfig.yml < /app/springconfig-app.yml
+
+配置：
+    label: master
+    name: springconfig
+    profile: dev
+结论：
+    优先级 application.yml < springconfig.yml < /app/springconfig-dev.yml
+
+
+
+示例：
+========================================================================================================================
+根目录下文件
+    - application.yml
+    - springconfig.yml
+    - springconfig-dev.yml
+    - springconfig-prod.yml
+    - /app/springconfig-app.yml
+    - /app/springconfig-dev.yml
+    - /web/springconfig-web.yml
+    - /web/springconfig-dev.yml
+配置：
+    服务端：
+        search-paths:
+    客户端：
+        label: master
+        name: springconfig
+        profile: app
+结论：
+    优先级 application.yml < springconfig.yml
+
+配置：
+    服务端：
+        search-paths:
+        - app
+        - web
+    客户端：
+        label: master
+        name: springconfig
+        profile: app
+结论：
+    优先级 application.yml < springconfig.yml < /app/springconfig-app.yml
+
+配置：
+    服务端：
+        search-paths:
+        - app
+        - web
+    客户端：
+        label: master
+        name: springconfig
+        profile: web
+结论：
+    优先级 application.yml < springconfig.yml < /web/springconfig-web.yml
+
+配置：
+    服务端：
+        search-paths:
+        - app
+        - web
+    客户端：
+        label: master
+        name: springconfig
+        profile: dev
+结论：
+    优先级 application.yml < springconfig.yml < /web/springconfig-dev.yml
+
+配置：
+    服务端：
+        search-paths:
+        - web
+        - app
+    客户端：
+        label: master
+        name: springconfig
+        profile: dev
+结论：
+    优先级 application.yml < springconfig.yml < /app/springconfig-dev.yml
+
+
+
