@@ -1,0 +1,34 @@
+itchun:
+  name: 我是application.yml
+  age: 我是application.yml
+  sex: 我是application.yml
+  see: 我是application.yml
+  book: 我是application.yml
+  app: 我是application.yml
+  list: 我是application.yml
+  map: 我是application.yml
+  abb: 我是application.yml
+  adf: 我是application.yml
+  dss: 我是application.yml
+  d345: 我是application.yml
+  qwe: 我是application.yml
+  sdf: 我是application.yml
+  drt: 我是application.yml
+  hyy: 我是application.yml
+
+spring:
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+    
+management:
+  endpoints:
+    web:
+      exposure:
+        #        include: refresh
+        include: "*"
+  endpoint:
+    health:
+      show-details: ALWAYS
