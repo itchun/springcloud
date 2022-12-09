@@ -5,8 +5,6 @@ spring:
       server:
         git: #默认使用git
           uri: https://gitee.com/iwangchun/config-test.git
-          username: iwangchun
-          password: wodemimi.2013.
           basedir: D:/config2
           search-paths:
             - app
