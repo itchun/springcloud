@@ -28,6 +28,7 @@
         <module>seata</module>
         <module>openfeign</module>
         <module>springCloudConfig</module>
+        <module>nacos</module>
     </modules>
 
     <properties>
