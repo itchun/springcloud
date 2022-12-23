@@ -17,10 +17,10 @@ import java.util.Random;
 // 下划线改驼峰
 // 数据库代码生成 配合 flyway
 // V1.0
-public class Shmec_age06_data_platform {
+public class Shmec_age06_data_platformV2 {
 
     protected static String root_path = "C:\\工作\\数据之家\\项目档案\\[学前教育]数据中台\\";
-    protected static String db_excel_path = root_path + "项目\\数据库表结构\\数据对接\\字典表-管理通--v1.0.xlsx";
+    protected static String db_excel_path = root_path + "项目\\数据库表结构\\数据对接\\通用数据接口--v1.1.xlsx";
     protected static String java_path = root_path + "代码\\shmec_age06_data_platform\\src\\main\\";
     protected static String java_home_prefix = "com/datahome";
     protected static String java_home_path = java_path + "java/" + java_home_prefix + "/";
@@ -33,8 +33,8 @@ public class Shmec_age06_data_platform {
     protected static String java_service_impl_path = java_home_path + "service/" + java_model_prefix + "/impl";
     protected static String sql_version_path = java_path + "resources/db_migration";
     protected static String sql_db_name = "data_centre";
-    protected static String sql_version_name = "V0.2.4__init_table";
-    protected static boolean file_ifexsits_cover = true;
+    protected static String sql_version_name = "V0.2.3__init_table";
+    protected static boolean file_ifexsits_cover = false;
     protected static boolean field_is_underline = true;
     protected static String[] sheetname_include = {};
     protected static String[] sheetname_excluded = {};
@@ -44,7 +44,7 @@ public class Shmec_age06_data_platform {
     protected static String pagckage_import_group = pagckage_import_root + "." + java_group_path.replace(java_home_path, "").replace("/", ".");
     protected static String pagckage_import_service = pagckage_import_root + "." + java_service_path.replace(java_home_path, "").replace("/", ".");
     protected static String pagckage_import_service_impl = pagckage_import_root + "." + java_service_impl_path.replace(java_home_path, "").replace("/", ".");
-    protected static String package_entity_prefix = "package " + pagckage_import_entity + ";\n\nimport com.baomidou.mybatisplus.annotation.IdType;\nimport com.baomidou.mybatisplus.annotation.TableId;\nimport com.baomidou.mybatisplus.annotation.TableName;\nimport " + pagckage_import_entity.replace(java_model_prefix, "") + "BaseEntity;\nimport lombok.Data;\nimport lombok.EqualsAndHashCode;\n\nimport java.util.Date;\n";
+    protected static String package_entity_prefix = "package " + pagckage_import_entity + ";\n\nimport com.baomidou.mybatisplus.annotation.IdType;\nimport com.baomidou.mybatisplus.annotation.TableId;\nimport com.baomidou.mybatisplus.annotation.TableName;\nimport com.datahome.annotation.ParamValidator;\nimport " + pagckage_import_entity.replace(java_model_prefix, "") + "BaseEntity;\nimport com.datahome.util.RegexpUtil;\nimport lombok.Data;\nimport lombok.EqualsAndHashCode;\n\nimport java.util.Date;\n";
     protected static String package_mapper_prefix = "package " + pagckage_import_mapper + ";\nimport com.baomidou.mybatisplus.core.mapper.BaseMapper;\nimport org.springframework.stereotype.Repository;\n";
     protected static String package_group_prefix = "package " + pagckage_import_group + ";\n\nimport " + pagckage_import_group.replace(java_model_prefix, "") + "BaseGroup;\n";
     protected static String package_service_prefix = "package " + pagckage_import_service + ";";
@@ -105,6 +105,7 @@ public class Shmec_age06_data_platform {
                 String db_o = StringUtils.trimToEmpty((String) data.get(3));
                 String db_index = StringUtils.trimToEmpty((String) data.get(4));
                 String db_dic = StringUtils.trimToEmpty((String) data.get(5));
+                String db_must = StringUtils.trimToEmpty((String) data.get(6));
                 db_dic = StrUtil.isBlank(db_dic) ? "" : db_dic.replaceAll("\n", " ").replaceAll("\r", " ");
 
                 // 实体类
@@ -113,6 +114,90 @@ public class Shmec_age06_data_platform {
                         sb_entity.append("    @TableId(value = \"" + param + "\", type = IdType.AUTO)\n");
                     else
                         sb_entity.append("    @TableId(value = \"" + param + "\", type = IdType.ASSIGN_UUID)\n");
+                }
+                String paramValidator = "@ParamValidator(";
+
+                // 必填
+                if ("必填".equals(db_must)) {
+                    paramValidator += ",notNull = true";
+                }
+
+                // 符合必填
+                if ("符合必填".equals(db_must)) {
+                    String field = db_dic.split(",")[1].split("为")[0].trim();
+                    String val = db_dic.split("\\[")[1].split("]")[0].trim();
+                    paramValidator += ",conditionNotNull = true , conditionNotNullFieldValue = \"" + field + "_" + val + "\"";
+                }
+
+                // 格式
+                if (StrUtil.isNotBlank(db_dic) && !"36位uuid".equals(db_dic)) {
+
+                    // 日期正则
+                    if ("yyyy-MM-dd HH:mm:ss.SSS".equals(db_dic)) {
+                        paramValidator += ",regexp = RegexpUtil.format_2";
+                    }
+
+                    // 日期正则
+                    else if ("yyyy-MM-dd".equals(db_dic)) {
+                        paramValidator += ",regexp = RegexpUtil.format_1";
+                    }
+
+                    // 日期正则
+                    else if ("yyyy-MM".equals(db_dic)) {
+                        paramValidator += ",regexp = RegexpUtil.format_3";
+                    }
+
+                    // 日期正则
+                    else if ("yyyy".equals(db_dic)) {
+                        paramValidator += ",regexp = RegexpUtil.format_4";
+                    }
+
+                    // 手机号码
+                    else if ("^1[0-9]{10}$".equals(db_dic)) {
+                        paramValidator += ",regexp = RegexpUtil.phone";
+                    }
+
+                    // 邮箱
+                    else if ("^(\\w+([-.][A-Za-z0-9]+)*){3,18}@\\w+([-.][A-Za-z0-9]+)*\\.\\w+([-.][A-Za-z0-9]+)*$".equals(db_dic)) {
+                        paramValidator += ",regexp = RegexpUtil.eamil";
+                    }
+
+                    // uuid
+                    else if ("^[0-9a-zA-Z]{8}-[0-9a-zA-Z]{4}-[0-9a-zA-Z]{4}-[0-9a-zA-Z]{4}-[0-9a-zA-Z]{12}$".equals(db_dic)) {
+                        paramValidator += ",regexp = RegexpUtil.uuid";
+                    }
+
+                    // 数据状态
+                    else if ("^(删除|正常)$".equals(db_dic)) {
+                        paramValidator += ",regexp = RegexpUtil.data_status";
+                    }
+
+                    // 字典
+                    else if (db_dic.startsWith("dc_")) {
+                        String dic = db_dic.split(",")[0].trim();
+                        paramValidator += ",dic = \"" + dic + "\"";
+                    }
+
+                    // 长度限制
+                    else if (db_dic.startsWith("长度限制")) {
+                        String dic = db_dic.split("长度限制")[1].trim();
+                        paramValidator += ",length_check = true , length_max = " + dic + "";
+                    }
+
+                    // int
+                    else if (db_dic.startsWith("int")) {
+                        paramValidator += ",long_check = true ";
+                    }
+
+                    // float
+                    else if ("float".equals(db_dic)) {
+                        paramValidator += ",float_check = true ";
+                    }
+                }
+                paramValidator += ")";
+                paramValidator = paramValidator.replace("(,", "(");
+                if (!"@ParamValidator()".equals(paramValidator)) {
+                    sb_entity.append("    " + paramValidator + "\n");
                 }
                 sb_entity.append("    private " + getFieldType(db_type) + " " + field_name + "; //" + param_zh + " " + db_dic + "\n\n");
 
@@ -249,6 +334,7 @@ public class Shmec_age06_data_platform {
         if ("int8".equals(db_type.toLowerCase())) type = "Long";
         if ("integer".equals(db_type.toLowerCase())) type = "Integer";
         if (db_type.toLowerCase().startsWith("text")) type = "String";
+        if (db_type.toLowerCase().startsWith("txt")) type = "String";
         if (db_type.toLowerCase().startsWith("varchar")) type = "String";
         if (db_type.toLowerCase().startsWith("char")) type = "String";
         if (db_type.toLowerCase().startsWith("timestamp")) type = "Date";
