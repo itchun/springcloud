@@ -1,1 +1,9 @@
-
+server:
+  port: 2020
+spring:
+  application:
+    name: discover-client-2020
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:2021

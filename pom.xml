@@ -74,11 +74,11 @@
     <dependencies>
 
        <!-- springcloud-->
-       <!-- <dependency>
+        <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
-        </dependency>-->
-
+        </dependency>
+        
         <!--springboot-->
         <dependency>
             <groupId>org.springframework.boot</groupId>

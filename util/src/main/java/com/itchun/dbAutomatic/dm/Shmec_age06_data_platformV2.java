@@ -16,7 +16,7 @@ import java.util.Random;
 // 达梦 版本
 // 下划线改驼峰
 // 数据库代码生成 配合 flyway
-// V1.0
+// V1.1 配合 @ParamValidator 注解版
 public class Shmec_age06_data_platformV2 {
 
     protected static String root_path = "C:\\工作\\数据之家\\项目档案\\[学前教育]数据中台\\";
