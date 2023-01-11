@@ -7,11 +7,11 @@
         <artifactId>discover</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
-    <artifactId>discover-client-2021</artifactId>
+    <artifactId>discover-client-2022</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>discover-client-2021</name>
+    <name>discover-client-2022</name>
     <packaging>jar</packaging>
-    <description>discover-client-2021 project for Spring Boot</description>
+    <description>discover-client-2022 project for Spring Boot</description>
 
     <dependencies>
 

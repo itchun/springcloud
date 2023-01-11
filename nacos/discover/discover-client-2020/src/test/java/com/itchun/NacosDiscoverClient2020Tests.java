@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class DiscoverClient2021Tests {
+class NacosDiscoverClient2020Tests {
 
 	@Test
 	void contextLoads() {

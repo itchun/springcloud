@@ -16,12 +16,27 @@
     <modules>
         <module>discover-client-2020</module>
         <module>discover-client-2021</module>
+        <module>discover-client-2022</module>
     </modules>
 
     <dependencies>
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+
+            <!--使用下面的 spring-cloud-loadbalancer 替代-->
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework.cloud</groupId>
+                    <artifactId>spring-cloud-starter-netflix-ribbon</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <!--使用eureka的时候不必主动引入，最新的版本已经使用了spring-cloud-loadbalancer但是nacos还是用的ribbon,所以这里主动引入替换-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-loadbalancer</artifactId>
         </dependency>
     </dependencies>
 
