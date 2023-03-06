@@ -20,11 +20,11 @@ import java.util.Random;
 public class Shmec_age06_data_platform {
 
     protected static String root_path = "C:\\工作\\数据之家\\项目档案\\[学前教育]数据中台\\";
-    protected static String db_excel_path = root_path + "项目\\数据库表结构\\数据对接\\适龄幼儿数据对接接口--v1.0.xlsx";
+    protected static String db_excel_path = root_path + "项目\\数据库表结构\\开放管理 --v1.0.xlsx";
     protected static String java_path = root_path + "代码\\shmec_age06_data_platform\\src\\main\\";
     protected static String java_home_prefix = "com/datahome";
     protected static String java_home_path = java_path + "java/" + java_home_prefix + "/";
-    protected static String java_model_prefix = "api";
+    protected static String java_model_prefix = "";
     protected static String java_entity_path = java_home_path + "entity/" + java_model_prefix;
     protected static String java_mapper_path = java_home_path + "mapper/" + java_model_prefix;
     protected static String java_group_path = java_home_path + "group/" + java_model_prefix;
@@ -33,7 +33,7 @@ public class Shmec_age06_data_platform {
     protected static String java_service_impl_path = java_home_path + "service/" + java_model_prefix + "/impl";
     protected static String sql_version_path = java_path + "resources/db_migration";
     protected static String sql_db_name = "data_centre";
-    protected static String sql_version_name = "V0.2.5__init_table";
+    protected static String sql_version_name = "V0.2.8__init_table";
     protected static boolean file_ifexsits_cover = false;
     protected static boolean field_is_underline = true;
     protected static String[] sheetname_include = {};
@@ -256,6 +256,7 @@ public class Shmec_age06_data_platform {
     }
 
     public static void write(String path, String fileName, String content) {
+        if (!new File(path).exists()) new File(path).mkdirs();
         String absult_path = path + File.separator + fileName;
         File file = new File(absult_path);
         if (file.exists()) {

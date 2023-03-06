@@ -177,10 +177,12 @@ public class Main {
         if (db_type.toLowerCase().startsWith("varchar")) type = "String";
         if (db_type.toLowerCase().startsWith("char")) type = "String";
         if (db_type.toLowerCase().startsWith("timestamp")) type = "Date";
+        if (db_type.toLowerCase().startsWith("float")) type = "Float";
         return type;
     }
 
     public static void write(String path, String fileName, String content, boolean file_ifexsits_cover) {
+        if (!new File(path).exists()) new File(path).mkdirs();
         String absult_path = path + File.separator + fileName;
         File file = new File(absult_path);
         if (file.exists()) {

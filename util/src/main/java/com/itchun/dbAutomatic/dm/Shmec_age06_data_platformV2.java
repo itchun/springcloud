@@ -342,6 +342,7 @@ public class Shmec_age06_data_platformV2 {
     }
 
     public static void write(String path, String fileName, String content) {
+        if (!new File(path).exists()) new File(path).mkdirs();
         String absult_path = path + File.separator + fileName;
         File file = new File(absult_path);
         if (file.exists()) {
