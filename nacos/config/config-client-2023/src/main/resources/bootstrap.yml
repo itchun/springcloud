@@ -1,0 +1,55 @@
+server:
+  port: 2023
+spring:
+  application:
+    name: config-client-2023
+  profiles:
+    active: dev
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+        namespace: 21348ce0-4310-49ad-b8c7-e83f2471a0c4
+      config:
+        server-addr: 127.0.0.1:8848
+        namespace: 21348ce0-4310-49ad-b8c7-e83f2471a0c4 #对应创建的命名空间的ID
+        prefix: #对应Data ID的前缀部分，空时默认取值spring.application.name
+        file-extension: yaml
+        group: DEFAULT_GROUP #默认：DEFAULT_GROUP,可以不指定，不指定的时候，这个group参数不要有
+        refresh-enabled: true #是否实时刷新，默认true
+#        # 用于共享的配置文件
+#        shared-configs:
+#          - data-id: common-mysql.yaml
+#            group: SPRING_CLOUD_EXAMPLE_GROUP
+#
+#          - data-id: common-redis.yaml
+#            group: SPRING_CLOUD_EXAMPLE_GROUP
+#
+#          - data-id: common-base.yaml
+#            group: SPRING_CLOUD_EXAMPLE_GROUP
+
+
+        # 常规配置文件 写法一
+        # 多配置 多共享配置不能指定server-addr和namespace
+        # 优先级大于 shared-configs，在 shared-configs 之后加载
+        extension-configs[0]:
+          data-id: data-source-${spring.profiles.active}.yaml #对应Data ID的完整部分
+          group: data
+          refresh: true
+        extension-configs[1]:
+          data-id: common-${spring.profiles.active}.yaml
+          group: common
+          refresh: true
+        # 写法二
+#        extension-configs:
+#          - data-id: data-source-${spring.profiles.active}.yaml #对应Data ID的完整部分
+#            group: data
+#            refresh: true
+#
+#          - data-id: common-${spring.profiles.active}.yaml
+#            group: common
+#            refresh: true
+#注意点：
+#     1.配置文件的命名规则：${spring.cloud.nacos.config.prefix}-${spring.profiles.active}.${spring.cloud.nacos.config.file-extension}，
+#       其中【-${spring.profiles.active}】选填，通俗一点就是 “前缀-环境-扩展名”
+#     2.当 spring.profiles.active 为空时，对应的连接符 ”-“ 也将不存在，dataId 的拼接格式变成 ${prefix}.${file-extension}

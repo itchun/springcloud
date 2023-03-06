@@ -1,0 +1,19 @@
+server:
+  port: 2024
+spring:
+  application:
+    name: config-client-2024
+  profiles:
+    active: dev
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+        namespace: 21348ce0-4310-49ad-b8c7-e83f2471a0c4
+      config:
+        server-addr: 127.0.0.1:8848
+        namespace: 21348ce0-4310-49ad-b8c7-e83f2471a0c4 #对应创建的命名空间的ID
+        prefix: data-source #对应Data ID的前缀部分，空时默认取值spring.application.name
+        file-extension: yaml
+        group: data #默认：DEFAULT_GROUP,可以不指定，不指定的时候，这个group参数不要有
+        refresh-enabled: true #是否实时刷新，默认true
