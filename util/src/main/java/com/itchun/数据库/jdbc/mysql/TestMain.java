@@ -1,4 +1,4 @@
-package com.itchun.db.jdbc.mysql;
+package com.itchun.数据库.jdbc.mysql;
 
 import java.sql.*;
 import java.util.*;
